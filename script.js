@@ -2,8 +2,8 @@
    EDIT THIS PART  (or use the link: yoursite/?name=Aisha&from=Ali)
    ============================================================ */
 const CONFIG = {
-  name: 'Charos',    // her name, e.g. 'Aisha'
-  sender: 'Murod'   // your name, e.g. 'Ali'
+  name: '',    // her name, e.g. 'Aisha'
+  sender: ''   // your name, e.g. 'Ali'
 };
 
 /* ============================================================ */
@@ -144,15 +144,16 @@ async function typeInto(el, text, speed = 42) {
 }
 
 const LINES = [
-  `Hey ${N}...`,
-  "I'm not great at saying things out loud,",
-  'so I wrote some code to say it for me.',
+  `Happy Birthday, ${N}...`,
+  'Today the world got a little brighter,',
+  'because this is the day you were born.',
+  "I wanted to give you something money can't buy,",
+  "so I wrote some code to say what I can't say out loud.",
   'Every tiny "I love you" in that heart is a thought of you.',
   'You make my ordinary days feel like my favourite song.',
   "Your smile is the best thing I've ever seen on any screen.",
-  'I looked for a bug in my feelings for you,',
-  "but there isn't one. It's all true.",
-  'So I have just one question...'
+  "I looked for a bug in my feelings for you, but there isn't one.",
+  'So on your special day, I have one question...'
 ];
 
 let running = false;
@@ -243,4 +244,23 @@ $('replay').addEventListener('click', () => {
   show('intro');
 });
 
-$('start').addEventListener('click', start);
+/* ---------- birthday cake: blow the candles, then the story starts ---------- */
+const cake = $('cake');
+let blown = false;
+
+$('start').addEventListener('click', () => {
+  blown = false;
+  cake.classList.remove('out');
+  $('wishHint').textContent = 'Tap the candles and make a wish';
+  show('cakeScreen');
+});
+
+cake.addEventListener('click', async () => {
+  if (blown) return;
+  blown = true;
+  cake.classList.add('out');
+  burst(W / 2, H / 2, 90);
+  $('wishHint').textContent = 'Your wish is on its way... ♥';
+  await sleep(2600);
+  start();
+});
