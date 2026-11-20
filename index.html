@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Something for you ♥</title>
+  <meta name="theme-color" content="#05000a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <canvas id="heart"></canvas>
+  <canvas id="fx"></canvas>
+
+  <main>
+    <section id="intro" class="screen active">
+      <p class="small">Psst... I made something for</p>
+      <h1 id="who">you</h1>
+      <button id="start" class="btn">Open ♥</button>
+    </section>
+
+    <section id="heartScreen" class="screen">
+      <div id="center">
+        <p class="small">made with love for</p>
+        <h2 id="centerName">you</h2>
+      </div>
+    </section>
+
+    <section id="letterScreen" class="screen">
+      <div id="letter"></div>
+    </section>
+
+    <section id="askScreen" class="screen">
+      <h2 id="ask">Will you be mine?</h2>
+      <div class="buttons">
+        <button id="yes" class="btn">Yes ♥</button>
+        <button id="no" class="btn ghost">No</button>
+      </div>
+    </section>
+
+    <section id="yesScreen" class="screen">
+      <h2>You just made me the happiest person alive ♥</h2>
+      <pre id="code"></pre>
+      <p id="sign"></p>
+      <button id="replay" class="link">watch again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
