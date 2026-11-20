@@ -147,3 +147,28 @@ h2 { font-size: clamp(2rem, 8vw, 3.4rem); line-height: 1.2; }
 }
 
 @keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- birthday cake ---------- */
+#cake { position: relative; width: 200px; height: 215px; margin: 34px 0 22px; cursor: pointer; }
+#cake .layer { position: absolute; left: 50%; transform: translateX(-50%); border-radius: 12px; overflow: hidden; }
+#cake .layer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 14px;
+  background: #fff; opacity: .9;
+}
+#cake .bottom { bottom: 0; width: 200px; height: 70px; background: linear-gradient(#ff8fb1, #ff5c8a); box-shadow: 0 0 28px rgba(255, 92, 138, .5); }
+#cake .top { bottom: 70px; width: 140px; height: 60px; background: linear-gradient(#ffd0dc, #ffb6c1); }
+#cake .candles { position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%); display: flex; gap: 22px; }
+.candle { position: relative; width: 10px; height: 44px; background: linear-gradient(#fff, #ffb6c1); border-radius: 3px; }
+.flame {
+  position: absolute; left: 50%; top: -22px; width: 12px; height: 20px; margin-left: -6px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 50% 70%, #fff6a8, #ffb300 60%, #ff6a00);
+  box-shadow: 0 0 18px 6px rgba(255, 170, 0, .6);
+  animation: flicker .18s infinite alternate;
+  transition: opacity .4s;
+}
+#cake.out .flame { opacity: 0; }
+@keyframes flicker {
+  from { transform: scale(1, 1) rotate(-3deg); }
+  to   { transform: scale(.92, 1.08) rotate(3deg); }
+}
