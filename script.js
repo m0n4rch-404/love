@@ -2,8 +2,8 @@
    EDIT THIS PART  (or use the link: yoursite/?name=Aisha&from=Ali)
    ============================================================ */
 const CONFIG = {
-  name: '',    // her name, e.g. 'Aisha'
-  sender: ''   // your name, e.g. 'Ali'
+  name: 'Charos',    // her name, e.g. 'Aisha'
+  sender: 'Murod'   // your name, e.g. 'Ali'
 };
 
 /* ============================================================ */
